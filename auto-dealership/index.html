@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoElite - Concessionario Auto di Lusso</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-icon">🏎️</span>
+        <span class="logo-text">AutoElite</span>
+      </div>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#inventory" class="nav-link">Inventario</a></li>
+        <li><a href="#services" class="nav-link">Servizi</a></li>
+        <li><a href="#financing" class="nav-link">Finanziamenti</a></li>
+        <li><a href="#about" class="nav-link">Chi Siamo</a></li>
+        <li><a href="#contact" class="nav-link">Contatti</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-icon" id="searchBtn" title="Cerca">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+        <button class="btn-icon" id="favoriteBtn" title="Preferiti">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge" id="favCount">0</span>
+        </button>
+        <button class="btn-primary" onclick="openContact()">Prenota Test Drive</button>
+        <button class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-slider">
+      <div class="hero-slide active">
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920');"></div>
+        <div class="hero-content">
+          <div class="container">
+            <span class="hero-subtitle">Benvenuti in AutoElite</span>
+            <h1 class="hero-title">L'Eccellenza su Quattro Ruote</h1>
+            <p class="hero-description">Scopri la nostra esclusiva collezione di auto premium e sportive</p>
+            <div class="hero-buttons">
+              <button class="btn-primary btn-lg" onclick="scrollToInventory()">Esplora Inventario</button>
+              <button class="btn-secondary btn-lg" onclick="openContact()">Contattaci</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">250+</div>
+            <div class="stat-label">Auto in Stock</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Anni Esperienza</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5000+</div>
+            <div class="stat-label">Clienti Soddisfatti</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Marchi Premium</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Bar -->
+  <section class="search-section">
+    <div class="container">
+      <div class="search-card">
+        <h2>Trova l'Auto dei Tuoi Sogni</h2>
+        <div class="search-form">
+          <div class="search-group">
+            <label>Marca</label>
+            <select id="filterBrand">
+              <option value="">Tutte le marche</option>
+              <option value="BMW">BMW</option>
+              <option value="Mercedes">Mercedes-Benz</option>
+              <option value="Audi">Audi</option>
+              <option value="Porsche">Porsche</option>
+              <option value="Ferrari">Ferrari</option>
+              <option value="Lamborghini">Lamborghini</option>
+              <option value="Tesla">Tesla</option>
+              <option value="Maserati">Maserati</option>
+            </select>
+          </div>
+          <div class="search-group">
+            <label>Tipo</label>
+            <select id="filterType">
+              <option value="">Tutti i tipi</option>
+              <option value="SUV">SUV</option>
+              <option value="Berlina">Berlina</option>
+              <option value="Sportiva">Sportiva</option>
+              <option value="Coupé">Coupé</option>
+              <option value="Elettrica">Elettrica</option>
+            </select>
+          </div>
+          <div class="search-group">
+            <label>Prezzo Max</label>
+            <select id="filterPrice">
+              <option value="">Qualsiasi</option>
+              <option value="50000">€50.000</option>
+              <option value="100000">€100.000</option>
+              <option value="150000">€150.000</option>
+              <option value="200000">€200.000</option>
+              <option value="999999">€200.000+</option>
+            </select>
+          </div>
+          <div class="search-group">
+            <label>Anno Min</label>
+            <select id="filterYear">
+              <option value="">Qualsiasi</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+            </select>
+          </div>
+          <button class="btn-search" onclick="applyFilters()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            Cerca
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inventory Section -->
+  <section class="inventory-section" id="inventory">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Il Nostro Inventario Esclusivo</h2>
+        <p class="section-subtitle">Auto selezionate con cura per soddisfare ogni esigenza</p>
+      </div>
+
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">Tutte</button>
+        <button class="filter-tab" data-filter="Sportiva">Sportive</button>
+        <button class="filter-tab" data-filter="SUV">SUV</button>
+        <button class="filter-tab" data-filter="Berlina">Berline</button>
+        <button class="filter-tab" data-filter="Elettrica">Elettriche</button>
+      </div>
+
+      <div class="inventory-grid" id="inventoryGrid">
+        <!-- Cars will be loaded here by JavaScript -->
+        <div class="loading">Caricamento veicoli...</div>
+      </div>
+
+      <div class="load-more-container">
+        <button class="btn-secondary btn-lg" onclick="loadMoreVehicles()">Carica Altri Veicoli</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">I Nostri Servizi</h2>
+        <p class="section-subtitle">Assistenza completa per ogni tua esigenza</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Manutenzione</h3>
+          <p>Centro assistenza autorizzato con tecnici specializzati e ricambi originali</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💰</div>
+          <h3>Finanziamenti</h3>
+          <p>Soluzioni di finanziamento personalizzate con tassi competitivi</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔄</div>
+          <h3>Permuta</h3>
+          <p>Valutazione gratuita della tua auto usata con i migliori prezzi di permuta</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3>Garanzia</h3>
+          <p>Garanzia estesa fino a 5 anni su tutti i veicoli certificati</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚗</div>
+          <h3>Test Drive</h3>
+          <p>Prova su strada il veicolo dei tuoi sogni senza impegno</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📄</div>
+          <h3>Pratiche Auto</h3>
+          <p>Gestione completa di tutte le pratiche burocratiche e assicurative</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financing Section -->
+  <section class="financing-section" id="financing">
+    <div class="container">
+      <div class="financing-content">
+        <div class="financing-text">
+          <h2>Finanziamenti su Misura</h2>
+          <p>Rendiamo il tuo sogno accessibile con piani di finanziamento personalizzati</p>
+          <ul class="financing-features">
+            <li>✓ TAN fisso competitivo</li>
+            <li>✓ Durata fino a 84 mesi</li>
+            <li>✓ Anticipo da 0%</li>
+            <li>✓ Approvazione rapida in 24h</li>
+            <li>✓ Assicurazione inclusa</li>
+            <li>✓ Possibilità di riscatto finale</li>
+          </ul>
+          <button class="btn-primary btn-lg" onclick="openFinancingCalculator()">Calcola la Rata</button>
+        </div>
+        <div class="financing-calculator">
+          <h3>Calcola la Tua Rata</h3>
+          <div class="calculator-form">
+            <div class="form-group">
+              <label>Prezzo Veicolo</label>
+              <input type="number" id="vehiclePrice" placeholder="€50.000" value="50000">
+            </div>
+            <div class="form-group">
+              <label>Anticipo (%)</label>
+              <input type="range" id="downPayment" min="0" max="50" value="20" oninput="updateCalculator()">
+              <span id="downPaymentValue">20%</span>
+            </div>
+            <div class="form-group">
+              <label>Durata (mesi)</label>
+              <input type="range" id="loanDuration" min="12" max="84" value="60" step="12" oninput="updateCalculator()">
+              <span id="durationValue">60 mesi</span>
+            </div>
+            <div class="calculator-result">
+              <div class="result-label">Rata Mensile Stimata</div>
+              <div class="result-value" id="monthlyPayment">€685</div>
+              <div class="result-note">TAN 4.5% - TAEG 5.2%</div>
+            </div>
+            <button class="btn-secondary btn-block" onclick="requestFinancing()">Richiedi Preventivo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1562911791-c7a97b729ec5?w=800" alt="Showroom AutoElite">
+          <div class="about-badge">
+            <span class="badge-text">Dal 2009</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <h2 class="section-title">AutoElite: Passione per l'Eccellenza</h2>
+          <p>Da oltre 15 anni siamo il punto di riferimento per chi cerca auto premium e sportive nella regione. La nostra missione è offrire non solo veicoli di altissima qualità, ma un'esperienza di acquisto unica e personalizzata.</p>
+          <p>Ogni auto del nostro showroom è selezionata con cura, certificata e accompagnata da garanzia estesa. Il nostro team di esperti è sempre a disposizione per guidarti nella scelta perfetta.</p>
+          <div class="about-features">
+            <div class="feature-box">
+              <h4>Qualità Certificata</h4>
+              <p>Ogni veicolo passa rigorosi controlli di qualità</p>
+            </div>
+            <div class="feature-box">
+              <h4>Trasparenza Totale</h4>
+              <p>Storico completo e report dettagliati</p>
+            </div>
+            <div class="feature-box">
+              <h4>Assistenza Post-Vendita</h4>
+              <p>Ti seguiamo anche dopo l'acquisto</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Cosa Dicono i Nostri Clienti</h2>
+        <p class="section-subtitle">La soddisfazione dei clienti è la nostra priorità</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Esperienza eccezionale! Staff competente e disponibile. Ho trovato l'auto perfetta e le pratiche sono state velocissime."</p>
+          <div class="testimonial-author">
+            <strong>Marco R.</strong>
+            <span>BMW X5 M Sport</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Professionalità e cortesia al top. La permuta della mia vecchia auto è stata valutata in modo più che equo. Consigliatissimo!"</p>
+          <div class="testimonial-author">
+            <strong>Laura M.</strong>
+            <span>Mercedes GLE Coupé</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Finalmente un concessionario che capisce le esigenze del cliente. Servizio impeccabile dall'inizio alla fine."</p>
+          <div class="testimonial-author">
+            <strong>Alessandro P.</strong>
+            <span>Porsche 911 Carrera</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Vieni a Trovarci</h2>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Showroom</h4>
+              <p>Via Milano 88, 37100 Verona (VR)</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Telefono</h4>
+              <p>+39 045 987654</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p>info@autoelite.it</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <h4>Orari</h4>
+              <p>Lun-Ven: 9:00 - 19:00</p>
+              <p>Sabato: 9:00 - 13:00, 15:00 - 19:00</p>
+              <p>Domenica: Su appuntamento</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">YouTube</a>
+          </div>
+        </div>
+        <div class="contact-form-container">
+          <h3>Richiedi Informazioni</h3>
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <input type="text" placeholder="Nome" required>
+              <input type="text" placeholder="Cognome" required>
+            </div>
+            <div class="form-row">
+              <input type="email" placeholder="Email" required>
+              <input type="tel" placeholder="Telefono" required>
+            </div>
+            <select required>
+              <option value="">Tipo di richiesta</option>
+              <option>Test Drive</option>
+              <option>Informazioni su veicolo</option>
+              <option>Finanziamento</option>
+              <option>Permuta</option>
+              <option>Assistenza</option>
+              <option>Altro</option>
+            </select>
+            <textarea rows="5" placeholder="Messaggio" required></textarea>
+            <div class="form-checkbox">
+              <input type="checkbox" id="privacy" required>
+              <label for="privacy">Accetto il trattamento dei dati personali</label>
+            </div>
+            <button type="submit" class="btn-primary btn-block btn-lg">Invia Richiesta</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>🏎️ AutoElite</h3>
+          <p>Il tuo partner di fiducia per auto premium e sportive dal 2009.</p>
+          <div class="footer-social">
+            <a href="#">📘</a>
+            <a href="#">📷</a>
+            <a href="#">🎥</a>
+            <a href="#">🐦</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Link Rapidi</h4>
+          <ul>
+            <li><a href="#inventory">Inventario</a></li>
+            <li><a href="#services">Servizi</a></li>
+            <li><a href="#financing">Finanziamenti</a></li>
+            <li><a href="#about">Chi Siamo</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#">Test Drive</a></li>
+            <li><a href="#">Permuta</a></li>
+            <li><a href="#">Manutenzione</a></li>
+            <li><a href="#">Garanzia</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Legale</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Termini e Condizioni</a></li>
+            <li><a href="#">Trasparenza Prezzi</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AutoElite - Tutti i diritti riservati</p>
+        <p>Creato da Terry - Terragon Labs</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vehicle Detail Modal -->
+  <div class="modal" id="vehicleModal">
+    <div class="modal-overlay" onclick="closeVehicleModal()"></div>
+    <div class="modal-content vehicle-modal-content">
+      <button class="modal-close" onclick="closeVehicleModal()">×</button>
+      <div id="vehicleDetail"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
