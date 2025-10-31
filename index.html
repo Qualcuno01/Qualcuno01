@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeCars - Auto di Lusso Premium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>LUXE<span>CARS</span></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#collection">Collezione</a></li>
+                <li><a href="#about">Chi Siamo</a></li>
+                <li><a href="#contact">Contatti</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2 class="hero-subtitle">Esperienza di Guida Superiore</h2>
+            <h1 class="hero-title">Il Lusso su Quattro Ruote</h1>
+            <p class="hero-description">Scopri la nostra collezione esclusiva di automobili premium</p>
+            <div class="hero-buttons">
+                <a href="#collection" class="btn btn-primary">Esplora Collezione</a>
+                <a href="#contact" class="btn btn-secondary">Contattaci</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- Featured Cars -->
+    <section id="collection" class="featured-cars">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Collezione Premium</h2>
+                <p class="section-subtitle">Scegli la tua prossima auto da sogno</p>
+            </div>
+
+            <div class="cars-grid">
+                <!-- Car Card 1 -->
+                <div class="car-card" data-aos="fade-up">
+                    <div class="car-image">
+                        <div class="car-badge">Nuovo</div>
+                        <div class="car-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="120" height="120">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Mercedes-AMG GT</h3>
+                        <p class="car-description">Sportiva di lusso con prestazioni eccezionali</p>
+                        <div class="car-specs">
+                            <span><i>⚡</i> 585 CV</span>
+                            <span><i>🏁</i> 0-100: 3.6s</span>
+                            <span><i>⚙️</i> Automatico</span>
+                        </div>
+                        <div class="car-footer">
+                            <span class="car-price">€180,000</span>
+                            <button class="btn-details">Dettagli</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car Card 2 -->
+                <div class="car-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="car-image">
+                        <div class="car-badge hot">Popolare</div>
+                        <div class="car-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="120" height="120">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Porsche 911 Turbo S</h3>
+                        <p class="car-description">Icona sportiva con tecnologia all'avanguardia</p>
+                        <div class="car-specs">
+                            <span><i>⚡</i> 650 CV</span>
+                            <span><i>🏁</i> 0-100: 2.7s</span>
+                            <span><i>⚙️</i> PDK</span>
+                        </div>
+                        <div class="car-footer">
+                            <span class="car-price">€245,000</span>
+                            <button class="btn-details">Dettagli</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car Card 3 -->
+                <div class="car-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="car-image">
+                        <div class="car-badge exclusive">Esclusivo</div>
+                        <div class="car-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="120" height="120">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">BMW M8 Competition</h3>
+                        <p class="car-description">Eleganza e potenza in perfetto equilibrio</p>
+                        <div class="car-specs">
+                            <span><i>⚡</i> 625 CV</span>
+                            <span><i>🏁</i> 0-100: 3.2s</span>
+                            <span><i>⚙️</i> M Steptronic</span>
+                        </div>
+                        <div class="car-footer">
+                            <span class="car-price">€165,000</span>
+                            <button class="btn-details">Dettagli</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car Card 4 -->
+                <div class="car-card" data-aos="fade-up">
+                    <div class="car-image">
+                        <div class="car-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="120" height="120">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Audi RS e-tron GT</h3>
+                        <p class="car-description">Il futuro dell'auto sportiva elettrica</p>
+                        <div class="car-specs">
+                            <span><i>⚡</i> 646 CV</span>
+                            <span><i>🏁</i> 0-100: 3.3s</span>
+                            <span><i>⚙️</i> Elettrico</span>
+                        </div>
+                        <div class="car-footer">
+                            <span class="car-price">€155,000</span>
+                            <button class="btn-details">Dettagli</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car Card 5 -->
+                <div class="car-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="car-image">
+                        <div class="car-badge">Nuovo</div>
+                        <div class="car-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="120" height="120">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Huracán EVO</h3>
+                        <p class="car-description">Pura adrenalina italiana</p>
+                        <div class="car-specs">
+                            <span><i>⚡</i> 640 CV</span>
+                            <span><i>🏁</i> 0-100: 2.9s</span>
+                            <span><i>⚙️</i> LDF</span>
+                        </div>
+                        <div class="car-footer">
+                            <span class="car-price">€280,000</span>
+                            <button class="btn-details">Dettagli</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car Card 6 -->
+                <div class="car-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="car-image">
+                        <div class="car-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="120" height="120">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Ferrari F8 Tributo</h3>
+                        <p class="car-description">Il cavallino rampante in tutta la sua gloria</p>
+                        <div class="car-specs">
+                            <span><i>⚡</i> 720 CV</span>
+                            <span><i>🏁</i> 0-100: 2.9s</span>
+                            <span><i>⚙️</i> F1 DCT</span>
+                        </div>
+                        <div class="car-footer">
+                            <span class="car-price">€320,000</span>
+                            <button class="btn-details">Dettagli</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h2 class="section-title">Chi Siamo</h2>
+                    <p>Da oltre 20 anni, LuxeCars è sinonimo di eccellenza nel mercato delle auto di lusso. Offriamo una selezione curata delle migliori automobili premium al mondo.</p>
+                    <p>La nostra missione è fornire un'esperienza d'acquisto unica, dove passione per l'automobile e servizio impeccabile si incontrano.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="500">0</h3>
+                            <p class="stat-label">Auto Vendute</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="20">0</h3>
+                            <p class="stat-label">Anni Esperienza</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="98">0</h3>
+                            <p class="stat-label">% Soddisfazione</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <div class="about-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="200" height="200">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 10c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contattaci</h2>
+                <p class="section-subtitle">Siamo qui per rispondere alle tue domande</p>
+            </div>
+
+            <div class="contact-content">
+                <form class="contact-form" data-aos="fade-up">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nome Completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Seleziona un modello</option>
+                            <option value="mercedes">Mercedes-AMG GT</option>
+                            <option value="porsche">Porsche 911 Turbo S</option>
+                            <option value="bmw">BMW M8 Competition</option>
+                            <option value="audi">Audi RS e-tron GT</option>
+                            <option value="lamborghini">Lamborghini Huracán EVO</option>
+                            <option value="ferrari">Ferrari F8 Tributo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Messaggio" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Invia Richiesta</button>
+                </form>
+
+                <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h4>Indirizzo</h4>
+                            <p>Via del Lusso 123<br>20121 Milano, Italia</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h4>Telefono</h4>
+                            <p>+39 02 1234 5678</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div class="info-text">
+                            <h4>Email</h4>
+                            <p>info@luxecars.it</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div class="info-text">
+                            <h4>Orari</h4>
+                            <p>Lun - Ven: 9:00 - 19:00<br>Sab: 10:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>LUXE<span>CARS</span></h3>
+                    <p>Il tuo partner di fiducia per auto di lusso premium</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Link Rapidi</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#collection">Collezione</a></li>
+                        <li><a href="#about">Chi Siamo</a></li>
+                        <li><a href="#contact">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Servizi</h4>
+                    <ul>
+                        <li><a href="#">Finanziamenti</a></li>
+                        <li><a href="#">Permute</a></li>
+                        <li><a href="#">Test Drive</a></li>
+                        <li><a href="#">Assistenza</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Seguici</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LuxeCars. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
