@@ -1,0 +1,132 @@
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pizzeria da Gianni</title>
+	<style>
+		body {
+			font-family: 'Segoe UI', Arial, sans-serif;
+			margin: 0;
+			color: #333;
+			background: linear-gradient(135deg, #fff8f0 60%, #f7c873 100%);
+			min-height: 100vh;
+		}
+		.navbar {
+			background: rgba(207, 180, 89, 0.95);
+			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1rem 2rem;
+			box-shadow: 0 2px 8px #e67e22;
+		}
+		.navbar .project-name {
+			font-size: 1.7rem;
+			font-weight: bold;
+			letter-spacing: 1px;
+		}
+		.navbar .search-bar {
+			flex: 1;
+			margin: 0 2rem;
+		}
+		.navbar input[type="text"] {
+			padding: 0.5rem 1rem;
+			border-radius: 20px;
+			border: none;
+			width: 250px;
+			font-size: 1rem;
+		}
+		.navbar .dropdown {
+			position: relative;
+			display: inline-block;
+		}
+		.navbar .dropbtn {
+			background: #e67e22;
+			color: white;
+			padding: 0.7rem 1.2rem;
+			font-size: 1rem;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+		}
+		.navbar .dropdown-content {
+			display: none;
+			position: absolute;
+			right: 0;
+			background: #fff8f0;
+			min-width: 160px;
+			box-shadow: 0 2px 8px #e67e22;
+			z-index: 1;
+			border-radius: 8px;
+		}
+		.navbar .dropdown-content a {
+			color: #d35400;
+			padding: 0.8rem 1.2rem;
+			text-decoration: none;
+			display: block;
+			font-weight: 500;
+		}
+		.navbar .dropdown-content a:hover {
+			background: #ffe5d0;
+		}
+		.navbar .dropdown:hover .dropdown-content {
+			display: block;
+		}
+		main {
+			margin-top: 80px;
+			text-align: center;
+		}
+		.welcome {
+			background: rgba(255, 255, 255, 0.92);
+			display: inline-block;
+			padding: 2rem 3rem;
+			border-radius: 18px;
+			box-shadow: 0 2px 8px #e67e22;
+			margin-top: 2rem;
+		}
+		footer {
+			background: #d35400;
+			color: white;
+			text-align: center;
+			padding: 1rem 0;
+			position: fixed;
+			width: 100%;
+			bottom: 0;
+		}
+	</style>
+	<script>
+	function apriMenuSostenibile() {
+		window.open('menu_sostenibile.html', '_blank', 'width=500,height=400');
+	}
+	</script>
+</head>
+<body>
+	<nav class="navbar">
+	<span class="project-name">Pizzeria da Gianni</span>
+		<div class="search-bar">
+			<input type="text" placeholder="Cerca nel menù...">
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">Menu ▼</button>
+			<div class="dropdown-content">
+				<a href="#menu" onclick="apriMenuSostenibile(); return false;">Menù</a>
+				<a href="#gestionale">Gestionale</a>
+				<a href="#contattaci">Contattaci</a>
+			</div>
+		</div>
+	</nav>
+	<main>
+		<div class="welcome">
+            <img src="img/logo.jpg" alt="Logo Pizzeria da Gianni">
+			<h2>Benvenuto alla Pizzeria da Gianni <span style="font-size:2rem;"></span></h2>
+			<p>Scopri il nostro menù e lasciati tentare dalle nostre pizze artigianali.</p>
+		</div>
+	</main>
+	<footer>
+	<p>© 2025 Pizzeria da Gianni - Via Roma 123, Napoli</p>
+	</footer>
+</body>
+</html>

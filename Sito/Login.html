@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: rgb(236, 236, 236);
+    }
+    .login-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .login-container h2 {
+      text-align: center;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login al Gestionale</h2>
+    <input type="text" id="username" placeholder="Utente" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="login()">Accedi</button>
+    <p id="error-message" style="color: red; text-align: center; display: none;">Utente o password errati.</p>
+  </div>
+
+  <script>
+    const validUsername = "admin";  // Username predefinito
+    const validPassword = "libresco";  // Password predefinita
+
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('error-message');
+
+      // Verifica se l'utente e la password sono corretti
+      if (username === validUsername && password === validPassword) {
+        // Reindirizza alla pagina del gestionale (qui puoi sostituire con la tua pagina)
+        window.location.href = "Sito.html";  // Pagina gestionale che hai già creato
+      } else {
+        // Mostra un messaggio di errore se i dati non sono corretti
+        errorMessage.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prova</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="top-buttons">
+    <button class="logout-button" onclick="logout()">Logout</button>
+    <button class="carrello-button" onclick="apriCarrello()">Apri Carrello</button>
+    <button class="CreateBarcode" onclick="CreaBarcode()">Crea Barcode</button>
+  </div>
+
+  <div class="content">
+    <h1>Benvenuto nel Gestionale Prova</h1>
+  </div>
+
+  <h3>Aggiungi un Libro</h3>
+  <input type="text" id="isbn" placeholder="ISBN">
+  <input type="text" id="copie" placeholder="Numero di copie">
+  <input type="text" id="nome" placeholder="Proprietario">
+  <button type="button" onclick="aggiungiLibro()">Aggiungi Libro</button>
+  <button type="button" onclick="rimuovi()">Compra Libro</button>
+
+  <br><br>
+  <input type="text" id="search" placeholder="Cerca un elemento...">
+
+  <h3>Libri Aggiunti</h3>
+  <ul id="itemList"></ul>
+
+  <br><br><br>
+
+  <div class="footer">
+    <p>Project made by Popovschi Florin Antonio</p>
+    <p>ITIS MARCONI VERONA, Piazzale Guardini 1 VR</p>
+  </div>
+
+  <!-- Popup Carrello -->
+  <div id="popupCarrello" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="chiudiCarrello()">&times;</span>
+      <h2>Carrello</h2>
+      <p class="subtitle">Visualizza gli articoli aggiunti al tuo carrello</p>
+      <div id="cartItems"></div>
+      <p>Totale: <span id="totalPrice">0.00</span> €</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
