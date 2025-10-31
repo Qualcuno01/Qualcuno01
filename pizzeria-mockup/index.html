@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzeria da Gianni - Autentica Pizza Napoletana</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <img src="/images/logo.png" alt="Pizzeria da Gianni" class="nav-logo">
+        <span class="brand-name">Pizzeria da Gianni</span>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#about" class="nav-link">Chi Siamo</a>
+        <a href="#reservations" class="nav-link">Prenotazioni</a>
+        <a href="#contact" class="nav-link">Contatti</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Cerca pizza...">
+          <button class="search-btn">🔍</button>
+        </div>
+        <button class="cart-btn" id="cartBtn">
+          🛒 <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="user-btn" id="userBtn">👤</button>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Benvenuti a Pizzeria da Gianni</h1>
+      <p class="hero-subtitle">Autentica Pizza Napoletana dal 1985</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="scrollToMenu()">Esplora il Menu</button>
+        <button class="btn btn-secondary" onclick="openReservation()">Prenota un Tavolo</button>
+      </div>
+      <div class="hero-features">
+        <div class="feature-item">
+          <span class="feature-icon">🍕</span>
+          <span class="feature-text">100% Italiano</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🔥</span>
+          <span class="feature-text">Forno a Legna</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🚚</span>
+          <span class="feature-text">Consegna Veloce</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Il Nostro Menu</h2>
+        <p class="section-subtitle">Scopri le nostre deliziose pizze artigianali</p>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="category-filter" id="categoryFilter">
+        <button class="filter-btn active" data-category="all">Tutte</button>
+        <button class="filter-btn" data-category="1">Classiche</button>
+        <button class="filter-btn" data-category="2">Speciali</button>
+        <button class="filter-btn" data-category="3">Bianche</button>
+        <button class="filter-btn" data-category="vegetarian">Vegetariane</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="menuGrid">
+        <!-- Menu items will be loaded dynamically -->
+        <div class="loading">Caricamento menu...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image">
+          <img src="/images/restaurant.jpg" alt="Pizzeria da Gianni">
+          <div class="about-badge">
+            <span class="badge-year">dal 1985</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <h2 class="section-title">La Nostra Storia</h2>
+          <p>Dal 1985, Pizzeria da Gianni porta a Verona il sapore autentico della tradizione napoletana. Fondata da Gianni Esposito, maestro pizzaiolo con oltre 40 anni di esperienza, la nostra pizzeria è diventata un punto di riferimento per gli amanti della vera pizza napoletana.</p>
+          <p>Utilizziamo solo ingredienti di prima qualità: farina tipo 00, pomodori San Marzano DOP, mozzarella di bufala campana DOP e olio extravergine d'oliva. Il nostro impasto riposa per 24 ore e viene cotto nel nostro tradizionale forno a legna a 480°C.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number">40+</span>
+              <span class="stat-label">Anni di Esperienza</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Pizze Diverse</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10k+</span>
+              <span class="stat-label">Clienti Felici</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservations Section -->
+  <section class="reservations-section" id="reservations">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Prenota un Tavolo</h2>
+        <p class="section-subtitle">Garantiti i migliori posti per te e la tua famiglia</p>
+      </div>
+      <div class="reservation-form-container">
+        <form class="reservation-form" id="reservationForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="resName">Nome Completo</label>
+              <input type="text" id="resName" required>
+            </div>
+            <div class="form-group">
+              <label for="resPhone">Telefono</label>
+              <input type="tel" id="resPhone" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="resEmail">Email</label>
+              <input type="email" id="resEmail">
+            </div>
+            <div class="form-group">
+              <label for="resGuests">Numero Persone</label>
+              <select id="resGuests" required>
+                <option value="">Seleziona</option>
+                <option value="1">1 persona</option>
+                <option value="2">2 persone</option>
+                <option value="3">3 persone</option>
+                <option value="4">4 persone</option>
+                <option value="5">5 persone</option>
+                <option value="6">6+ persone</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="resDate">Data</label>
+              <input type="date" id="resDate" required>
+            </div>
+            <div class="form-group">
+              <label for="resTime">Ora</label>
+              <input type="time" id="resTime" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="resNotes">Richieste Speciali</label>
+            <textarea id="resNotes" rows="3" placeholder="Es: tavolo vicino alla finestra, seggiolone per bambini..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-large">Prenota Ora</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery Zones Section -->
+  <section class="delivery-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Zone di Consegna</h2>
+        <p class="section-subtitle">Verifica se consegniamo nella tua zona</p>
+      </div>
+      <div class="delivery-checker">
+        <input type="text" id="postalCodeInput" placeholder="Inserisci il tuo CAP (es. 37100)">
+        <button class="btn btn-primary" onclick="checkDelivery()">Verifica</button>
+      </div>
+      <div class="delivery-result" id="deliveryResult"></div>
+      <div class="delivery-zones-grid">
+        <div class="zone-card">
+          <h3>Centro Città</h3>
+          <p class="zone-caps">37100, 37121, 37122</p>
+          <p class="zone-fee">Consegna: €2.50</p>
+          <p class="zone-time">Tempo: 30 min</p>
+        </div>
+        <div class="zone-card">
+          <h3>Zona Nord</h3>
+          <p class="zone-caps">37123, 37124, 37125</p>
+          <p class="zone-fee">Consegna: €4.00</p>
+          <p class="zone-time">Tempo: 45 min</p>
+        </div>
+        <div class="zone-card">
+          <h3>Zona Sud</h3>
+          <p class="zone-caps">37126, 37127, 37128</p>
+          <p class="zone-fee">Consegna: €4.00</p>
+          <p class="zone-time">Tempo: 45 min</p>
+        </div>
+        <div class="zone-card">
+          <h3>Periferia</h3>
+          <p class="zone-caps">37129, 37130, 37131</p>
+          <p class="zone-fee">Consegna: €5.50</p>
+          <p class="zone-time">Tempo: 60 min</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2 class="section-title">Contattaci</h2>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <h4>Indirizzo</h4>
+              <p>Via Roma 123, 37100 Verona (VR)</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <h4>Telefono</h4>
+              <p>+39 045 123456</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div>
+              <h4>Email</h4>
+              <p>info@pizzeriadagianni.it</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🕐</span>
+            <div>
+              <h4>Orari di Apertura</h4>
+              <div class="opening-hours" id="openingHours">
+                <p><strong>Lunedì:</strong> 18:00 - 23:00</p>
+                <p><strong>Mar-Gio:</strong> 12:00 - 15:00, 18:00 - 23:00</p>
+                <p><strong>Ven-Sab:</strong> 12:00 - 15:00, 18:00 - 00:00</p>
+                <p><strong>Domenica:</strong> 12:00 - 15:00, 18:00 - 23:00</p>
+              </div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">TripAdvisor</a>
+          </div>
+        </div>
+        <div class="contact-map">
+          <div class="map-placeholder">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.3987668785477!2d10.992042!3d45.438384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI2JzE4LjIiTiAxMMKwNTknMzEuNCJF!5e0!3m2!1sit!2sit!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Pizzeria da Gianni</h3>
+          <p>Autentica pizza napoletana dal 1985</p>
+        </div>
+        <div class="footer-section">
+          <h4>Link Rapidi</h4>
+          <a href="#menu">Menu</a>
+          <a href="#about">Chi Siamo</a>
+          <a href="#reservations">Prenotazioni</a>
+          <a href="#contact">Contatti</a>
+        </div>
+        <div class="footer-section">
+          <h4>Informazioni</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Termini di Servizio</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+        <div class="footer-section">
+          <h4>Newsletter</h4>
+          <p>Iscriviti per offerte esclusive</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="La tua email">
+            <button class="btn btn-primary">Iscriviti</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pizzeria da Gianni - Tutti i diritti riservati</p>
+        <p>Creato da Terry - Terragon Labs</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Modal -->
+  <div class="modal" id="cartModal">
+    <div class="modal-overlay" onclick="closeCart()"></div>
+    <div class="modal-content cart-modal-content">
+      <div class="modal-header">
+        <h2>Il Tuo Carrello</h2>
+        <button class="modal-close" onclick="closeCart()">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="cart-items" id="cartItems">
+          <!-- Cart items will be loaded dynamically -->
+        </div>
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span>Subtotale:</span>
+            <span id="cartSubtotal">€0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Consegna:</span>
+            <span id="cartDelivery">€2.50</span>
+          </div>
+          <div class="summary-row">
+            <span>IVA (22%):</span>
+            <span id="cartTax">€0.00</span>
+          </div>
+          <div class="summary-row total">
+            <span>Totale:</span>
+            <span id="cartTotal">€0.00</span>
+          </div>
+        </div>
+        <div class="promo-code">
+          <input type="text" id="promoCodeInput" placeholder="Codice promozionale">
+          <button class="btn btn-secondary" onclick="applyPromoCode()">Applica</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeCart()">Continua Shopping</button>
+        <button class="btn btn-primary" onclick="proceedToCheckout()">Procedi al Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Detail Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-overlay" onclick="closeProductModal()"></div>
+    <div class="modal-content product-modal-content">
+      <button class="modal-close" onclick="closeProductModal()">×</button>
+      <div class="product-detail" id="productDetail">
+        <!-- Product details will be loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- User Menu Modal -->
+  <div class="modal" id="userModal">
+    <div class="modal-overlay" onclick="closeUserModal()"></div>
+    <div class="modal-content user-modal-content">
+      <div class="modal-header">
+        <h2>Account</h2>
+        <button class="modal-close" onclick="closeUserModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="user-menu" id="userMenu">
+          <!-- User menu will be loaded based on auth status -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
